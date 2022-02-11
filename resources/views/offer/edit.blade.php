@@ -139,15 +139,7 @@
               </select>
           </div>
 
-          <div class="input-box">
-            <span class="details">Asignar vacantes</span>
-            <select class="form-control" name="vacante">
-                <option selected>----Selecciona----</option>
-                @foreach ($offers as $student)
-                  <option value="{{ $offer->id }}">{{ $student->surname . ', ' . $student->name}}</option>
-                @endforeach         
-              </select>
-          </div>
+          
    
 
         </div>
