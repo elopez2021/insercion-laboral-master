@@ -34,7 +34,7 @@ Route::get('/test', function () {
     return 0;
 });
 
-Route::get('/offer-indexing', function($id){
+Route::get('/offer-indexing/{id?}', function($id){
     $offers = Offer::where('id', '=', $id)->paginate(15);
     return view('offer.index',["offers" => $offers, "users" => User::all(), "businesses" => Business::all()]);
 })->name('offer-indexing');
