@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\OfferController;
+use App\Http\Controllers\SearchController;
 use App\Models\User;
 use App\Models\Student;
 use App\Models\Offer;
@@ -33,6 +34,8 @@ Route::resource('offer', OfferController::class);
 Route::get('/test', function () {
     return 0;
 });
+
+Route::get('/search', [SearchController::class, 'search'])->name('web.search');
 
 Route::get('/offer-indexing/{id?}', function($id){
     $offers = Offer::where('id', '=', $id)->paginate(15);
