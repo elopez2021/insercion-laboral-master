@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Business;
 use App\Models\Student;
 
+use Illuminate\Support\Facades\DB;
+
 class OfferController extends Controller
 {
     /**
@@ -15,16 +17,13 @@ class OfferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {   
-        $offers = Offer::where('id', '=', $id)->paginate(15);
+        $offers = DB::table('offers')->paginate(15);
         return view('offer.index',["offers" => $offers, "users" => User::all(), "businesses" => Business::all()]);
     }
 
-    public function indexing($id)
-    {   
 
-    }
 
     /**
      * Show the form for creating a new resource.
