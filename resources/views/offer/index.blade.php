@@ -121,6 +121,57 @@ b {
   clear: both;
   content: "";
 }
+
+.d-flex label{
+        margin-right: 10px;
+        font-size:16px;
+        padding-top: 2.5px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #86b7fe;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+  font-size: 16px;
+}
+
+.form-control-sm {
+  min-height: calc(1.5em + (0.5rem + 2px));
+  padding: 4px 8px;
+  font-size: 16px;
+  border-radius: 3.2px;
+  width: 200px;
+  height: 2px;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
    </style>
 </head>
 <body>
@@ -225,6 +276,17 @@ b {
                 <a href="@auth @if ($userRole == 2) {{ route('offer.create') }} @endif @endauth" class="btn btn-light" ><i class="bi-plus-circle me-2"></i>Añadir Nueva Vacante</a>   
               </div>
               <div class="card-body" id="show_all_employees">
+              <div class="d-flex justify-content-end">
+                <label>Buscar:</label>
+                <form action="{{ route('web.search') }}" method="get">
+                <input type="search" list="empresas" class="form-control form-control-sm" placeholder="" name="query">
+               <datalist id="empresas">
+               @foreach ($offers as $offer)
+                <option value="{{ $offer->status }}">
+                @endforeach
+                </form>
+              </datalist>
+            </div>
                 <div style="overflow-x: auto;">
                     <table class="table table-striped table-sm text-center align-middle" id="data-table" >
                         <thead>
