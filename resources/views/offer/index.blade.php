@@ -278,11 +278,11 @@ b {
               <div class="card-body" id="show_all_employees">
               <div class="d-flex justify-content-end">
                 <label>Buscar:</label>
-                <form action="{{ route('web.search') }}" method="get">
+                <form action="{{ route('web.search-offer') }}" method="get">
                 <input type="search" list="empresas" class="form-control form-control-sm" placeholder="" name="query">
                <datalist id="empresas">
                @foreach ($offers as $offer)
-                <option value="{{ $offer->status }}">
+                <option value="{{ $offer->name }}">
                 @endforeach
                 </form>
               </datalist>

@@ -35,7 +35,8 @@ Route::get('/test', function () {
     return 0;
 });
 
-Route::get('/search', [SearchController::class, 'search'])->name('web.search');
+Route::get('/search-business', [SearchController::class, 'search_business'])->name('web.search-business');
+Route::get('/search-offer', [SearchController::class, 'search_offer'])->name('web.search-offer');
 
 Route::get('/offer-indexing/{id?}', function($id){
     $offers = Offer::where('id', '=', $id)->paginate(15);
