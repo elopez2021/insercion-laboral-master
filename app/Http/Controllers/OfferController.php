@@ -72,7 +72,7 @@ class OfferController extends Controller
      */
     public function edit($id)
     {
-        return view('offer.edit', ['offer' => Offer::find($id), 'users'=> User::all(), 'students'=> Student::all()]);
+        return view('offer.edit', ['offer' => Offer::find($id), 'users'=> User::all(), 'students'=> Student::all(), 'offers' => Offer::all()]);
     }
 
     /**
@@ -87,6 +87,8 @@ class OfferController extends Controller
         $offer = Offer::findOrFail($id);
 
         $offer->update($request->except('_token','student_id'));
+        $data = ['name' => $request->offer_id];
+        $offer->update($data);
 
         $student = Student::findOrFail($request->student_id);
         $student->offer_id = $id;

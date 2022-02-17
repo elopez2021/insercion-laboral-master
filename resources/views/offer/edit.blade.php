@@ -126,7 +126,7 @@
                 <option selected>----Selecciona----</option>
                 <option value="0">Pendiente</option>
                 <option value="1">Asignada</option>
-              </select>
+            </select>
           </div>
 
           <div class="input-box">
@@ -138,6 +138,19 @@
                 @endforeach         
               </select>
           </div>
+
+          <div class="input-box">
+            <span class="details">Asignar Vacante</span>
+            <select class="form-control" name="offer_id">
+                <option selected>----Selecciona----</option>
+                @foreach ($offers as $offer)
+                  <option value="{{ $offer->name }}">{{ $offer->name}}</option>
+                @endforeach         
+              </select>
+          </div>
+
+
+       
 
           
    

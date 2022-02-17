@@ -375,7 +375,7 @@ b {
                                           <form action="{{ route('business.destroy', $business->id) }}" method="post">
                                             @csrf    
                                             @method('DELETE')
-                                            <button type="submit" id="deleteIcon" class="text-danger mx-1 deleteIcon"><i class="bi-trash h4"></i></button>
+                                            <button type="submit" id="deleteIcon" class="text-danger mx-1 deleteIcon" onclick="return confirm('¿Quieres eliminar esta empresa?');"><i class="bi-trash h4"></i></button>
                                           </form>
                                         </td>
                                         @endif

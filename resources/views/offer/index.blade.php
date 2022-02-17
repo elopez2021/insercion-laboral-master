@@ -273,7 +273,7 @@ b {
             <div class="card shadow">
             <div class="card-header bg-blue d-flex justify-content-between align-items-center">
                 <h3 class="text-light">@auth <?php if($userRole == 3){ echo "Manejar";}  ?> @endauth Vacantes</h3>
-                <a href="@auth @if ($userRole == 2) {{ route('offer.create') }} @endif @endauth" class="btn btn-light" style="visibility: hidden;"><i class="bi-plus-circle me-2"></i>Añadir Nueva Vacante</a>   
+                <a href="@auth @if ($userRole == 2) {{ route('offer.create') }} @endif @endauth" class="btn btn-light"><i class="bi-plus-circle me-2"></i>Añadir Nueva Vacante</a>   
               </div>
               <div class="card-body" id="show_all_employees">
               <div class="d-flex justify-content-end">
@@ -368,7 +368,7 @@ b {
                                             <form action="{{ route('offer.destroy', $offer->id) }}" method="post">
                                                 @csrf    
                                                 @method('DELETE')
-                                                <button type="submit" id="deleteIcon" class="text-danger mx-1 deleteIcon"><i class="bi-trash h4"></i></button>
+                                                <button type="submit" id="deleteIcon" class="text-danger mx-1 deleteIcon" style="background:none;" onclick="return confirm('¿Quieres eliminar esta vacante?');"><i class="bi-trash h4"></i></button>
                                             </form>
                                         
                                         </td>
