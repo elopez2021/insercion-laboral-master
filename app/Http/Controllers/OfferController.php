@@ -50,7 +50,7 @@ class OfferController extends Controller
             $affectedRows = Offer::where('id', '=', $offer->id)->update(['business_id' => $id]);
         }
         
-        return redirect(route('home'))->withSuccess('Se ha creado la vacante con éxito!');;
+        return redirect(route('offer.index'))->withSuccess('Se ha creado la vacante con éxito!');;
     }
 
     /**
@@ -94,7 +94,7 @@ class OfferController extends Controller
         $student->offer_id = $id;
         $student->save();
         
-        return redirect(route('home'))->withSuccess('La vacante ha sido modificada con exito');
+        return redirect(route('offer.index'))->withSuccess('La vacante ha sido modificada con exito');
     }
 
     /**
@@ -106,6 +106,6 @@ class OfferController extends Controller
     public function destroy($id)
     {
         $success = Offer::destroy($id);
-        return redirect(route('home'))->withSuccess('La vacante ha sido eliminada con éxito');
+        return redirect(route('offer.index'))->withSuccess('La vacante ha sido eliminada con éxito');
     }
 }

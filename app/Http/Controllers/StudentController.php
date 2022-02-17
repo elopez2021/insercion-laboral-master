@@ -60,7 +60,7 @@ class StudentController extends Controller
         $affectedRows = Student::where('identification', '=', $request->identification)->update(['cv_path' => $cv_path]);
         $affectedRows = Student::where('identification', '=', $request->identification)->update(['user_id' => $user->id]);
 
-        return redirect(route('home'))->withSuccess('Se ha registrado con éxito!');
+        return redirect(route('student.index'))->withSuccess('Se ha registrado con éxito!');
     }
 
     /**
@@ -106,6 +106,6 @@ class StudentController extends Controller
     public function destroy($id)
     {
         $success = Student::destroy($id);
-        return redirect(route('home'))->withSuccess('El estudiante ha sido eliminado con éxito');
+        return redirect(route('student.index'))->withSuccess('El estudiante ha sido eliminado con éxito');
     }
 }

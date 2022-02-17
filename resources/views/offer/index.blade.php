@@ -284,8 +284,8 @@ b {
                @foreach ($offers as $offer)
                 <option value="{{ $offer->name }}">
                 @endforeach
+                </datalist>
                 </form>
-              </datalist>
             </div>
                 <div style="overflow-x: auto;">
                     <table class="table table-striped table-sm text-center align-middle" id="data-table" >
@@ -418,7 +418,7 @@ b {
 
 </div>
 
-<div class="credit"> OILP <span>IPISA</span> | © 2021 </div>
+<div class="credit"> OILP <span>IPISA</span> | © 2022 </div>
 
 </section>
 
@@ -437,14 +437,14 @@ b {
 
 
 @if (session()->has('success'))
-    <script>
-        window.onload = Swal.fire({
-            title: 'Éxito!',
-            text: '{{ $offers }}',
-            icon: 'success',
-            confirmButtonText: 'Cool'
-        })
-    </script>
+   <script>
+      window.onload = Swal.fire({
+         title: 'Éxito!',
+         text: '{{ session("success") }}',
+         icon: 'success',
+         confirmButtonText: 'Cool'
+      })
+   </script>
 @endif
 
 </body>

@@ -308,7 +308,7 @@ b {
                                             <form action="{{ route('student.destroy', $student->id) }}" method="post">
                                               @csrf
                                               @method('DELETE')
-                                                <button type="submit" id="deleteIcon" style="background:none;" class="text-danger mx-1 deleteIcon"><i class="bi-trash h4"></i></button>
+                                                <button type="submit" id="deleteIcon" style="background:none;" onclick="return confirm('¿Quieres eliminar este estudiante?');" class="text-danger mx-1 deleteIcon"><i class="bi-trash h4"></i></button>
                                             </form>
                                         
                                         </td>
@@ -358,7 +358,7 @@ b {
 
 </div>
 
-<div class="credit"> OILP <span>IPISA</span> | © 2021 </div>
+<div class="credit"> OILP <span>IPISA</span> | © 2022 </div>
 
 </section>
 
@@ -367,24 +367,25 @@ b {
 
 
 <!-- swiper js link  -->
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
+
+@if (session()->has('success'))
+   <script>
+      window.onload = Swal.fire({
+         title: 'Éxito!',
+         text: '{{ session("success") }}',
+         icon: 'success',
+         confirmButtonText: 'Cool'
+      })
+   </script>
+@endif
 
 <!-- custom js file link  -->
 <script src="{{ asset('js/script.js') }}"></script>
 
-<script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
 
 
-@if (session()->has('success'))
-    <script>
-        window.onload = Swal.fire({
-            title: 'Éxito!',
-            text: '{{ $offers }}',
-            icon: 'success',
-            confirmButtonText: 'Cool'
-        })
-    </script>
-@endif
+
 
 </body>
 </html>

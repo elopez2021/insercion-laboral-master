@@ -45,7 +45,7 @@ class BusinessController extends Controller
         $business = Business::create($request->except('_token','email','password'));
         $affectedRows = Business::where('RNC', '=', $request->RNC)->update(['user_id' => $user->id]);
 
-        return redirect(route('home'))->withSuccess('Se ha registrado con éxito!');
+        return redirect(route('business.index'))->withSuccess('Se ha registrado con éxito!');
     }
 
     /**
@@ -91,6 +91,6 @@ class BusinessController extends Controller
     public function destroy($id)
     {
         $success = Business::destroy($id);
-        return redirect(route('home'))->withSuccess('La empresa ha sido eliminada con éxito');
+        return redirect(route('business.index'))->withSuccess('La empresa ha sido eliminada con éxito');
     }
 }
