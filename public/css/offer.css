@@ -1,3 +1,9 @@
+.text-records {
+  text-align: center !important;
+  color: #6c757d !important;
+  font-size: 30px;
+}
+
 table {
     caption-side: bottom;
     border-collapse: collapse;

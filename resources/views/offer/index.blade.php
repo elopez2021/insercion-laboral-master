@@ -316,6 +316,14 @@ b {
                         </tr>
                         </thead>
                         <tbody>
+
+                        
+                        @if($offers->count() == 0)           
+         
+                            <h1 class="text-records">No hay registros en la base de datos :c</h1>
+                        @endif
+                    
+                          
                             @foreach ($offers as $offer)
                                 <tr>
                                     <td>{{ $offer->id }}</td>
@@ -364,7 +372,8 @@ b {
                                             </form>
                                         
                                         </td>
-                                    @endif                                        
+                                    @endif
+                                                                            
                                   @endauth
                                 </tr>
                             @endforeach

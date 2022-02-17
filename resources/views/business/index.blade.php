@@ -325,6 +325,10 @@ b {
                         </tr>
                         </thead>
                         <tbody>
+                        @if($businesses->count() == 0)           
+         
+                        <h1 class="text-records">No hay registros en la base de datos :c</h1>
+                        @endif
                             @foreach ($businesses as $business)
                                 <tr>
                                     <td><a href="{{ route('offer-indexing', $business->id) }}">{{ $business->name }}</a></td>
