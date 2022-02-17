@@ -105,7 +105,7 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        $success = Student::destroy($id);
+        $success = Student::destroy($id);       
         return redirect(route('student.index'))->withSuccess('El estudiante ha sido eliminado con éxito');
     }
 }

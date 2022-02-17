@@ -302,14 +302,9 @@
 
 <!-- footer section ends -->
 
-
-
-<!-- swiper js link  -->
-<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-
 <!-- custom js file link  -->
 <script src="{{ asset('js/script.js') }}"></script>
-
+<!-- swiper js link  -->
 <script src="{{ asset('js/sweetalert2.all.min.js') }}"></script>
 
 </body>
