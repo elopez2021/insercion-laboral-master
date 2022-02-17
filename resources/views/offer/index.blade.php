@@ -271,9 +271,9 @@ b {
         <div class="row my-5">
           <div class="col-lg-12">
             <div class="card shadow">
-              <div class="card-header bg-blue d-flex justify-content-between align-items-center">
+            <div class="card-header bg-blue d-flex justify-content-between align-items-center">
                 <h3 class="text-light">@auth <?php if($userRole == 3){ echo "Manejar";}  ?> @endauth Vacantes</h3>
-                <a href="@auth @if ($userRole == 2) {{ route('offer.create') }} @endif @endauth" class="btn btn-light" ><i class="bi-plus-circle me-2"></i>Añadir Nueva Vacante</a>   
+                <a href="@auth @if ($userRole == 2) {{ route('offer.create') }} @endif @endauth" class="btn btn-light" style="visibility: hidden;"><i class="bi-plus-circle me-2"></i>Añadir Nueva Vacante</a>   
               </div>
               <div class="card-body" id="show_all_employees">
               <div class="d-flex justify-content-end">
